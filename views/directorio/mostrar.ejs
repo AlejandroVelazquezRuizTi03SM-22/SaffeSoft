@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card mt-5">
         <div class="card-header">
-            <h1>Productos</h1>
+            <h1>Directorio</h1>
         </div>
     
         <div class="card-body"></div>
@@ -12,33 +12,27 @@
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Precio</th>
-                    <th>Foto</th>
-                    <th>Editar/Borrar</th>
+                    <th>Descripcion</th>
+                    <th>Altitud</th>
+                    <th>Latitud</th>
                 </tr>
-               
-    
             </thead>
             <tbody>
                 <%
-                products.forEach((producto,i)=>{
+                dir.forEach((direccion, i) => {
                 %>
                     <tr>
                         <td><%= (i+1)*1 %></td>
-                        <td><%= producto.nombre %></td>
-                        <td><%= producto.categoria %></td>
-                        <td><%= producto.precio %></td>
-                        <td><img src="/images/<%= producto.foto %>" width="100px"></td>
+                        <td><%= direccion.nombre %></td>
+                        <td><%= direccion.descripcion %></td>
+                        <td><%= direccion.altitud %></td>
+                        <td><%= direccion.latitud %></td>
                         <td>
-                                <a href="/editarProducto/<%= producto.id %>">Editar</a>
-                                <a href="/borrarProducto/<%= producto.id %>">Borrar</a>
                         </td>
                     </tr>
                 <%
                 });
                 %>
-    
             </tbody>
         </table>
         

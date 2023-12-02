@@ -56,7 +56,7 @@ async function nuevoUsuario(newUser){
     var error=1;
     try{
         var usuario1=new Usuario(null,newUser);
-        console.log("Datos recibidos:", usuario1); // Agregar esta línea para depurar
+        console.log("Datos recibidos:", usuario1); 
         if(usuario1.bandera==0){
             conexion.doc().set(usuario1.obtenerUsuario);
             error=0;

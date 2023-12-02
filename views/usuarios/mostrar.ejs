@@ -10,7 +10,6 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Usuario</th>
                     <th>Password</th>
@@ -25,7 +24,6 @@
                 users.forEach((usuario,i)=>{
                 %>
                     <tr>
-                        <td><%= (i+1) *100 %></td>
                         <td><%= usuario.nombre %></td>
                         <td><%= usuario.usuario %></td>
                         <td>*********</td>

@@ -1,20 +1,20 @@
 <%- include("../templates/encabezado.ejs")%>
 <%- include("../templates/menu.ejs")%>
 <div class="container mt-5">
-    <form acction="/nuevoProducto" method="post">
+    <form acction="/nuevaDireccion" method="post">
         <div class="card">
             <div class="card-header">
-                <h1>Nuevo producto</h1>
+                <h1>Nueva Direccion</h1>
             </div>
             <div class="card-body">
                 <input class="form-control mt-3" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus>
-                <input class="form-control mt-3" type="text" name="categoria" id="categoria" placeholder="Categoria">
-                <input class="form-control mt-3" type="text" name="precio" id="precio" placeholder="Precio">
-                <input class="form-control mt-3" type="file" name="foto" id="foto" >
+                <input class="form-control mt-3" type="text" name="descripcion" id="descripcion" placeholder="Descripcion">
+                <input class="form-control mt-3" type="text" name="altitud" id="altitud" placeholder="Altitud">
+                <input class="form-control mt-3" type="text" name="latitud" id="latitud" placeholder="Latitud">
             
             </div>
             <div class="card-footer">
-                <button class="form-control btn-primary">Guardar Producto</button>
+                <button class="btn btn-dark d-block w-100">Guardar</button>
     
             </div>
         </div>

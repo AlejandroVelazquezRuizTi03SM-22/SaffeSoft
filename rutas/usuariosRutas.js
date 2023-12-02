@@ -5,14 +5,19 @@ var ruta=require("express").Router();
 var subirArchivo=require("../middlewares/middelewares").subirArchivo;
 
 //ruta.get("/", async (req, res) => {
-    // var users = await mostrarUsuarios();
-     //console.log(users);
-   //  res.render("usuarios/mostrar", {users});
- //})
+     //var users = await mostrarUsuarios();
+    // console.log(users);
+  //   res.render("usuarios/mostrar", {users});
+// })
 ruta.get("/",async(req,res)=>{
      res.render("usuarios/login");
+     
 });
 
+ruta.get("/mapa",async(req,res)=>{
+     res.render("usuarios/mapa");
+     
+});
 ruta.post("/", async(req, res) => {
      var error=await loginUsuario(req.body);
 
@@ -48,11 +53,11 @@ ruta.get("/editarUsuario/:id", async(req,res)=>{
 
 ruta.post("/editarusuario",async(req,res)=>{
      var error=await modificarUsuario(req.body);
-     res.redirect("/");
+     res.redirect("/mostrarUsuarios");
 })
 ruta.get("/borrarUsuario/:id",async(req,res)=>{
      await borrarUsuario(req.params.id);
-     res.redirect("/");
+     res.redirect("/mostrarUsuarios");
 })
 
 module.exports=ruta;

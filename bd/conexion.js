@@ -6,10 +6,10 @@ admin.initializeApp({
 });
 var cuenta=admin.firestore();
 
-var conexionUsuarios=cuenta.collection("ejemploBD");
-var conexionProductos=cuenta.collection("Productos");
-var conexionProductos=cuenta.collection("Usuarios");
+var conexionUsuarios=cuenta.collection("SaffeSoft");
+var conexionDirectorio=cuenta.collection("Directorio");
+var conexionUsuarios=cuenta.collection("Usuarios");
 module.exports={
-conexionProductos,
+conexionDirectorio,
 conexionUsuarios
 };
