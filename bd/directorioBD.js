@@ -37,13 +37,38 @@ async function nuevaDireccion(newdir){
     }
     return error;
  }
- async function buscarPorIdd(id){
+ async function modificarDireccion(datos){
+    var error=1;
+    var direc= await buscarPorId(datos.id);
+    if(direc!=undefined){
+        var direc=new Directorio(datos.id, datos);
+
+
+        if(direc.bandera==0){
+            try{
+                await conexion.doc(direc.id).set(direc.obtenerDireccion);
+                console.log("se modifico correctamente");
+                error=0;
+            }
+            catch(error){
+                cosole.log("Error al modificar"+err);
+                    
+            }
+        }else{
+            console.log("Error los datos no son vlaidos");
+        }
+    }
+    return error;
+      
+}
+
+async function buscarPorId(id){
     var direc;
     try{
         var directorioBD=await conexion.doc(id).get();
         var directorioObjeto=new Directorio(directorioBD.id, directorioBD.data());
-        if(directorioObjeto.bandera===0){
-            direc=directorioObjeto.obtenerDirectorio;
+        if(directorioObjeto.bandera==0){
+            direc=directorioObjeto.obtenerDireccion;
         }
     }
     catch(err){
@@ -51,9 +76,10 @@ async function nuevaDireccion(newdir){
     }
     return  direc;
  } 
+
  async function borrarDireccion(id){
     var error=1;
-    var direc= await buscarPorIdd(id);
+    var direc= await buscarPorId(id);
     if(direc != undefined){
         try{
             await conexion.doc(id).delete();
@@ -71,6 +97,7 @@ async function nuevaDireccion(newdir){
  module.exports={
     mostrarDirecciones,
     nuevaDireccion,
-    buscarPorIdd,
+    modificarDireccion,
+    buscarPorId,
     borrarDireccion
  };

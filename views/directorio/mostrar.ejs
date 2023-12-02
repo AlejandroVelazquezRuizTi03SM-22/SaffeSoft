@@ -15,6 +15,7 @@
                     <th>Descripcion</th>
                     <th>Altitud</th>
                     <th>Latitud</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,8 @@
                         <td><%= direccion.altitud %></td>
                         <td><%= direccion.latitud %></td>
                         <td>
+                            <a href="/editarDireccion/<%= direccion.id %>">Editar</a>
+                            <a href="/borrarDireccion/<%= direccion.id %>">Eliminar</a>
                         </td>
                     </tr>
                 <%
